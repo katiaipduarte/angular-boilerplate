@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
-import { DashboardHomeComponent } from './dashboard-home.component';
+import { DashboardRootComponent } from './dashboard-root.component';
 
-describe('DashboardHomeComponent', () => {
+describe('DashboardRootComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DashboardHomeComponent],
+      declarations: [DashboardRootComponent],
     }).compileComponents();
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(DashboardHomeComponent);
+    const fixture = TestBed.createComponent(DashboardRootComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });

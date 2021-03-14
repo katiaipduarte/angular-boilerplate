@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { SpinnerConsumer } from '../helpers/spinner-consumer';
+import { SpinnerConsumer } from '../mocks/spinner-consumer';
 import { SpinnerService } from './spinner.service';
 
 describe('SpinnerService', () => {

@@ -1,12 +1,27 @@
-import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { ErrorHandler, NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
 import { EnsureImportedOnceModule } from './guards/ensure-imported-once.guard';
+import { SpinnerInterceptor } from './interceptor/spinner.interceptor';
+import { HttpErrorService } from './services/http-error.service';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, HttpClientModule],
-  providers: [],
+  declarations: [LayoutComponent],
+  imports: [RouterModule, CommonModule, HttpClientModule],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: SpinnerInterceptor,
+      multi: true,
+    },
+    {
+      provide: ErrorHandler,
+      useClass: HttpErrorService,
+    },
+  ],
 })
 export class CoreModule extends EnsureImportedOnceModule {
   // Looks for the module in the parent injector to see if it's already been loaded (only want it loaded once)

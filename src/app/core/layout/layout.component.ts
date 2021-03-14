@@ -1,6 +1,7 @@
 import { AfterContentChecked, Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Title } from '@angular/platform-browser';
+import { SpinnerService } from '../services/spinner.service';
 
 @Component({
   selector: 'app-layout',
@@ -10,8 +11,17 @@ import { Title } from '@angular/platform-browser';
 export class LayoutComponent implements AfterContentChecked, OnInit {
   title = '';
   isMobileLayout = true;
+  loading = false;
 
-  constructor(private breakpointObserver: BreakpointObserver, private titleService: Title) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private titleService: Title,
+    private spinnerService: SpinnerService,
+  ) {
+    this.spinnerService.visibility.subscribe((value: boolean) => {
+      this.loading = value;
+    });
+  }
 
   ngOnInit(): void {
     this.checkIfIsMobileView();

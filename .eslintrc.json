@@ -26,6 +26,12 @@
         "plugin:prettier/recommended"
       ],
       "rules": {
+        "no-useless-constructor": "off",
+        "no-empty-function": "off",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-empty-function": ["error", { "allow": ["constructors"] }],
         "@angular-eslint/component-selector": [
           "error",
           {
@@ -53,7 +59,7 @@
         "prettier/@typescript-eslint",
         "plugin:prettier/recommended"
       ],
-      "rules": {}
+      "rules": { }
     }
   ]
 }

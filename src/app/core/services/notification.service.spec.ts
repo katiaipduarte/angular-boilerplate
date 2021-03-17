@@ -16,8 +16,8 @@ describe('NotificationService', () => {
     imports: [MatSnackBarModule],
     providers: [MatSnackBarModule, Overlay],
     entryComponents: [],
-    mocks: [NotificationService]
-  })
+    mocks: [NotificationService],
+  });
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

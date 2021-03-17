@@ -87,7 +87,8 @@ const modules = [
   MatTreeModule,
   OverlayModule,
   PortalModule,
-  ScrollingModule,];
+  ScrollingModule,
+];
 
 @NgModule({
   imports: [...modules],

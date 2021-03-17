@@ -7,11 +7,13 @@ import { EnsureImportedOnceModule } from './guards/ensure-imported-once.guard';
 import { SpinnerInterceptor } from './interceptor/spinner.interceptor';
 import { HttpErrorService } from './services/http-error.service';
 import { LayoutComponent } from './layout/layout.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [LayoutComponent],
   imports: [RouterModule, CommonModule, HttpClientModule],
   providers: [
+    AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: SpinnerInterceptor,

@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from '../core/layout/layout.component';
-import { DashboardRootComponent } from './dashboard-root/dashboard-root.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    children: [{ path: '', component: DashboardRootComponent }],
+    canActivateChild: [],
+    children: [{ path: '', component: DashboardComponent }],
   },
 ];
 

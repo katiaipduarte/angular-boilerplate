@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Title } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
+import { NotificationService } from '../services/notification.service';
 
 import { LayoutComponent } from './layout.component';
 
@@ -10,7 +12,8 @@ describe('LayoutComponent', () => {
   beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [LayoutComponent],
-      providers: [Title],
+      imports: [RouterTestingModule],
+      providers: [Title, NotificationService],
     }).compileComponents();
   });
 

@@ -17,7 +17,6 @@ export class HttpErrorService implements ErrorHandler {
     console.log(err);
     // Log  the error
 
-    // Re-throw the error
     throw error;
   }
 }

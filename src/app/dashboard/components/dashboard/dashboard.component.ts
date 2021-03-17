@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { NotificationService } from 'src/app/core/services/notification.service';
+import { NotificationService } from '../../../core/services/notification.service';
 
 @Component({
-  selector: 'app-dashboard-root',
-  templateUrl: './dashboard-root.component.html',
-  styleUrls: ['./dashboard-root.component.scss'],
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardRootComponent implements OnInit {
+export class DashboardComponent implements OnInit {
   constructor(private titleService: Title, private notificationService: NotificationService) {}
 
   ngOnInit(): void {

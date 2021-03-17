@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { environment } from '../environments/environment';
-import { MaterialModule } from './material.module';
+import { MaterialModule } from './custom-material/material.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +22,7 @@ import { MaterialModule } from './material.module';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
+  exports: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
